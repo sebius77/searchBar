@@ -11,18 +11,18 @@ class SearchBar extends HTMLInputElement {
         // DATA
         this._users = 
         [
-            'toto',
-            'titi',
-            'Jean-Marc',
+            'Alfred',
+            'John',
+            'Alexandre',
             'Pierre',
             'Sébastien',
-            'Viviane',
-            'Alice',
-            'Germaine',
+            'Pierrot',
+            'Freddie',
+            'Cassandre',
             'Virginie',
             'Jean-Louis',
-            'Tom',
-            'Tonny',
+            'Alexandra',
+            'André',
             ];
         this._stringLength = 0;
         this._stringCharacter = null;
