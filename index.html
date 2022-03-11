@@ -1,17 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src="./components/search-bar.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <input id="search-bar" placeholder="Recherche" type="search" is="search-bar" size=0 data='{"user": "name", "materiel": "serialNumber"}'>
-    <div id="results-search"></div>        
-    
+    <div>
+        <input class="search-multi mr-3" placeholder="Recherche..." type="search"
+            is="search-bar" aria-label="search-bar" size="0"
+            data='{"0": "Dupont","1": "Sebastien","2": "Roger","3": "Clémentine","4": "Géraldine","5": "Victor","6": "Dumont"}'>
+        <div id="search-results"></div>      
+    </div>
+
+    <script src="searchBar.js"></script>
 </body>
 </html>
