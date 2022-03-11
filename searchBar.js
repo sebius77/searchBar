@@ -4,7 +4,7 @@
  * Date: 11/03/2022
  * Version: 1.0
  */
-class SearchBar extends HTMLInputElement {
+ class SearchBar extends HTMLInputElement {
     constructor() {
         super();
 
@@ -49,22 +49,29 @@ class SearchBar extends HTMLInputElement {
         });
     }
 
-    findElements(data) {
-        data = data.toLowerCase();
+    findElements(recherche) {
+        let id = this.getAttribute('id');
+        recherche = recherche.toLowerCase();
         const info = JSON.parse(this.data);
-        let string = '';
-        string += '<ul>';
+        let ul = document.createElement("ul");
         for (const [key, value] of Object.entries(info)) {
             let field = value.toLowerCase();
-            if (field.indexOf(data) > -1) {
-                string += '<a href="#"><li>' + value + '</li></a>';
+            if (field.indexOf(recherche) > -1) {
+                let a = document.createElement("a");
+                a.textContent = value;
+                let li = document.createElement("li");
+                li.append(a);
+                a.onclick = function() {
+                    let field = document.querySelector('#' + id);
+                    field.value = value;
+                } 
+                ul.append(li);
             }
         }
-        string += '</ul>';
-
+        
         /* Gérer la div recevant les résultats */
-        if (string !== '') {
-            this.divResults.innerHTML = string;
+        if (recherche !== '') {
+            this.divResults.append(ul);
             this.divResults.style.display = "block";
         }
         // Dans le cas ou le champ est vide
